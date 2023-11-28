@@ -1,0 +1,247 @@
+html, body {
+    height: 100%;
+}
+
+header{
+    background: no-repeat center center;
+    background-size: cover;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    background-color: #dac2fa;
+    font-family: "Georgia", serif;
+    font-weight: bold;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+h2{
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-weight: bolder;
+}
+
+.lead{
+    font-family: "Georgia", serif;
+    font-weight: bold;
+}
+
+.navbar li{
+    border-radius: 50px;
+    padding: 10px;
+    box-shadow: 0 25px 20px -20px rgba(0, 0, 0, 0.4);
+    font-family: "Arial", sans-serif;
+    font-weight: bolder;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 13px 35px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: color 0.5s;
+}
+
+.navbar ul li::after{
+    content: '';
+    background: #5C2C90;
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+    transition: top 0.5s, opacity 0.5s;  
+}
+
+.navbar ul li:hover{
+    color: #fff;   
+}
+
+.navbar ul li:hover::after{
+    top: 50%;
+    opacity: 1; 
+}
+
+.card{
+    aspect-ratio: 1 / 1.0;
+    padding: 24px;
+    background-color: hsl(210, 20%, 15%);
+    border-radius: 24px;
+    box-shadow: 0px 0px 20px -1.5px hsl(0, 0%, 0%, 0.5);
+    position: relative;
+    color: #fff;
+    margin: 24px;
+}
+
+.card::before{
+    content: "";
+    position: absolute;
+    inset: 1px;
+    background-color: hsl(210, 14%, 80%);
+    z-index: -1;
+    border-radius: inherit;
+    transition: all 0.35s ease;
+}
+
+.card:hover::before{
+    transform: rotate(10deg);
+    box-shadow: 0px 0px 20px -5px #000;  
+}
+
+.card:image - .img{
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+.card hover > .card-image{
+    translate: 0 -14px;
+} 
+
+h1{
+    font-family: "Titan One", cursive;
+    text-transform: uppercase;
+    background-image: linear-gradient(-225deg, #4a0075 0%, #451157 29%, #9511ce 67%,  #eaffd6  100%);
+    background-size: auto auto;
+    background-clip: border-box;
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    text-fill-color: transparent;
+    -webkit-text-stroke: 1px #220030;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 5s linear infinite;
+    display: inline-block;
+    font-size: 75px; 
+    font-weight: 900;
+}
+
+@keyframes textclip{
+    to{
+        background-position: 200% center;
+    }
+}
+
+footer {
+    flex-shrink: 0;
+}
+
+header {
+    color: #fff;
+    transition: all 0.3;
+    position: relative;
+}
+
+.btn{
+    background: #967ec3;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    -webkit-box-shadow: 0px 0px 30px 3px #9511ce;
+    -moz-box-shadow: 0px 0px 30px 3px #9511ce;
+    -box-shadow: 0px 0px 30px 3px #9511ce;
+}
+
+.color-overlay {
+    background-color: rgba(0, 0, 0, 0.4);
+    min-height: 60vh;
+}
+
+.singleCol {
+    max-width: 750px;
+}
+
+.email{
+    color: #000;
+}
+
+.email:hover{
+    color: #4a0075;
+}
+
+button{
+    background: white;
+    border: 5px solid #4a0075;
+    border-radius: 10px;
+    display: flex;
+}
+
+button:hover{
+    color: white;
+    background: #4a0075;
+}
+
+.info {
+    font-family: sans-serif;
+    font-size: 20px;
+}
+
+footer {
+    background-color: #5C2C90;
+}
+
+footer a {
+    position: relative;
+    color: #fff;
+    display: block;
+    font-size: 30px;
+    height: 60px;
+    width: 60px;
+    background: #9511ce;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 50%;
+    margin: 0 15px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+footer a:before{
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    background: #ff00a9;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    z-index: -1;
+    transform: scale(0.9);
+    transition: .5s;
+}
+
+footer a:hover:before{
+    filter: blur(3px);
+    transform: scale(1.2);
+    box-shadow: 0 0 25px #ff00a9;
+}
+
+footer a:hover{
+    color: #9511ce;
+    background-color: #9f88B1;
+    box-shadow: 0 0 25px #ff00a9;
+    text-shadow: 0 0 25px #ff00a9;
+}
+
+@media (max-width: 768px) {
+    .color-overlay {
+        min-height: 30vh;
+    }
+}
